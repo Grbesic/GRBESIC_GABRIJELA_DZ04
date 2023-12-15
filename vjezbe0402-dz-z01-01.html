@@ -1,0 +1,22 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+	function kalkulator()
+	{     
+        let input = prompt("Unesite prirodne brojeve koji su odvojeni zarezom: ");
+        let brojevi = input.split(',').map(Number);
+        let AS = brojevi.reduce((a, b) => a + b) / brojevi.length;
+        let geo = Math.pow(brojevi.reduce((a, b) => a * b), 1 / brojevi.length);
+
+        document.body.innerHTML = "<p>Aritmetička sredina: " + AS + "</p><p>Geometrijska sredina: " + geo + "</p>";
+    }
+    kalkulator();
+	
+	</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+        body {
+            display: flex;
+            justify-content: center;
+            margin: 0;
+			margin-top: 300px;
+        }
+	</style>
+</head>
+<body>
+
+<script>
+  
+    function odrediSlucBoju() {
+        const randomBoja = '#' + Math.floor(Math.random()*16777215).toString(16);
+        document.body.style.backgroundColor = randomBoja;
+        document.getElementById('trenutnaBoja').innerText = 'Trenutna boja: ' + randomBoja;
+    }
+</script>
+
+<button onclick="odrediSlucBoju()" >Promijeni boju pozadine</button>
+
+<div id="trenutnaBoja"></div>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<script>
+    function ocjenjivanje() {
+	
+        var mark = document.getElementById('mark').value;
+
+        mark = parseInt(mark);
+
+        if (mark >= 1 && mark <= 5) {
+            var oOcjeni;
+            switch (mark) {
+                case 1:
+                    oOcjeni = 'Nedovoljan';
+                    break;
+                case 2:
+                    oOcjeni = 'Dovoljan';
+                    break;
+                case 3:
+                    oOcjeni = 'Dobar';
+                    break;
+                case 4:
+                    oOcjeni = 'Vrlo dobar';
+                    break;
+                case 5:
+                    oOcjeni = 'Odličan';
+                    break;
+            }
+
+            document.getElementById('rezultatOcjene').innerText = 'Ocjena: ' + mark + ' - ' + oOcjeni;
+        } else {
+            alert('Unesite valjanu ocjenu od 1 do 5.');
+        }
+    }
+</script>
+
+<form>
+    <label for="mark">Unesite ocjenu (1-5): </label>
+    <input type="text" id="mark" name="mark" pattern="[1-5]" required>
+    <button type="button" onclick="ocjenjivanje()">Prikaži ocjenu</button>
+</form>
+
+<p id="rezultatOcjene"></p>
+
+</body>
+</html>
